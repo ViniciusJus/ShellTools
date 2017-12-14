@@ -44,7 +44,7 @@ echo "Criando Backup ..."
 ARQ="backup_home_$(date +%Y%m%d%H%M).tgz"
 #gera um backup na extenção .tar. Excluindo alguns diretórios.
 tar zcvpf $DESTINO/$ARQ --absolute-names --exclude="$HOME/Música" --exclude="$HOME/Vídeos" --exclude="$DESTINO" "$HOME"/* > /dev/null
-#gera um backup na extenção .tar. Com todos diretorios e no /home
+#gera um backup na extenção .tar. Com todos diretorios  no /home
 #tar zcpf $DESTINO/$ARQ --absolute-names "$HOME/*" > /dev/null
 
 echo
