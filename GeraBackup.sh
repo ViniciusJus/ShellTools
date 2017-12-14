@@ -5,7 +5,7 @@
 #			  (viniciusjdgoncalves@gmail.com)			 #
 # 14/12/17									 #
 # Descrição:									 #
-#		Script para gerar back do /home do usuário atual.                #
+#		Script para gerar backup do /home do usuário atual.                #
 # Modo de Uso:									 #
 #		./GeraBackup							 #
 ##################################################################################
@@ -42,8 +42,10 @@ fi
 
 echo "Criando Backup ..."
 ARQ="backup_home_$(date +%Y%m%d%H%M).tgz"
+#gera um backup na extenção .tar. Excluindo alguns diretórios.
 tar zcvpf $DESTINO/$ARQ --absolute-names --exclude="$HOME/Música" --exclude="$HOME/Vídeos" --exclude="$DESTINO" "$HOME"/* > /dev/null
-
+#gera um backup na extenção .tar. Com todos diretorios e no /home
+#tar zcpf $DESTINO/$ARQ --absolute-names "$HOME/*" > /dev/null
 
 echo
 echo "O backup de nome \""$ARQ"\" foi criado em $DESTINO"
